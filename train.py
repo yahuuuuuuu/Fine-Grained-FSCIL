@@ -59,6 +59,7 @@ def get_command_line_parser():
     # parser.add_argument('-v_dim', type=int, default=3, help='the dimensions of self-attention v')
     # parser.add_argument('-token_dim', type=int, default=2, help='dimension of each token of self-attention')
     parser.add_argument('-alpha', type=float, default=0.8)
+    parser.add_argument('-beta', type=float, default=0.8)
     # parser.add_argument('-beta', type=float, default=0.2, help='L2损失重要性（贝塔）')
     parser.add_argument('-moco_t', default=0.07, type=float, help='softmax temperature (default: 0.07)')
     parser.add_argument('-moco_dim', default=128, type=int, help='feature dimension (default: 128)')
@@ -68,7 +69,7 @@ def get_command_line_parser():
     parser.add_argument('-set_no_val', action='store_true', help='set validation using test set or no validation')
 
     # about training
-    parser.add_argument('-gpu', default='0')
+    parser.add_argument('-gpu', default='0,1,2,3')
     parser.add_argument('-num_workers', type=int, default=8)
     parser.add_argument('-seed', type=int, default=1)
     parser.add_argument('-debug', action='store_true')
