@@ -105,7 +105,8 @@ class FSCILTrainer(Trainer):
                           '\nstill need around %.2f mins to finish this session' % (
                                   (time.time() - start_time) * (args.epochs_base - epoch) / 60))
                     scheduler.step()
-
+                train_time = (base_train_end_time - t_start_time) / 60
+                print(f'Time of training:{train_time}')
                 result_list.append('Session {}, Test Best Epoch {},\nbest test Acc {:.4f}\n'.format(
                     session, self.trlog['max_acc_epoch'], self.trlog['max_acc'][session], ))
 

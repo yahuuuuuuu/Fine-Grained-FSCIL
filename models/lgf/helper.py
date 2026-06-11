@@ -35,7 +35,6 @@ def base_train(model, criterion, trainloader, optimizer, scheduler, epoch, args)
 
         label1 = torch.cat((train_label * 2, train_label * 2 + 1))
         # label2 = torch.cat((train_label,train_label))
-        label2 = train_label
         label = torch.eq(label1.unsqueeze(0), label1.unsqueeze(1)).float()
         logits, x1, x_c = model(im_cla=data_classify, im_q=data_query, im_k=data_key)
         # logits,text_logits = model(im_cla=data_classify,text_inputs=text)
@@ -45,7 +44,7 @@ def base_train(model, criterion, trainloader, optimizer, scheduler, epoch, args)
         # print(x_c.shape)
         loss1 = criterion(x1, label)
         label2 = torch.arange(b*2).cuda() 
-        total_loss = F.cross_entropy(logits, label1) + F.cross_entropy(x_c, label2) * args.alpha + loss1#
+        total_loss = F.cross_entropy(logits, label1) + F.cross_entropy(x_c, label2) * args.alpha + loss1 * args.beta #
         logits = (logits[:b, ::2] + logits[b:, 1::2]) / 2
         acc = count_acc(logits, train_label)
         lrc = scheduler.get_last_lr()[0]
