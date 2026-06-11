@@ -57,7 +57,13 @@ class MSTAR(Dataset):
         for l in list:
             s = l.split(' ')
             id = int(s[0])
-            cls = s[1]
+            cls = None
+            if (len(s) == 3):
+                cls = f'{list[1]} {list[2]}'
+            if (len(list) == 4):
+                cls = f'{list[1]} {list[2]} {list[3]}'
+            if (len(list) == 2):
+                cls = list[1]
             if id not in dict.keys():
                 dict[id] = cls
             else:
