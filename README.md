@@ -27,13 +27,3 @@ CIFAR100
 ```
 $python train.py -project lgf -dataset cifar100 -base_mode 'ft_cos' -new_mode 'avg_cos' -lr_base 0.1 -alpha 0.8 -lr_new 0.001 -decay 0.0005 -epochs_base 120 -schedule Cosine -gpu 0 -temperature 16 -moco_dim 32 -mlp -moco_t 0.07 -size_crops 32 18 -min_scale_crops 0.9 0.2 -max_scale_crops 1.0 0.7 -num_crops 2 0 -constrained_cropping
 ```
-# Detailed Performance
-<img width="920" height="829" alt="image" src="https://github.com/user-attachments/assets/39bca8e4-fa58-4f0c-a424-eb67ff7bc0c7" />
-
-<img width="922" height="310" alt="image" src="https://github.com/user-attachments/assets/41579b16-9e40-40b6-b66f-f5f8a42c5339" />
-
-<img width="911" height="319" alt="image" src="https://github.com/user-attachments/assets/8fcf8565-7b2b-4670-970c-8573a67a86b6" />
-
-<img width="914" height="319" alt="image" src="https://github.com/user-attachments/assets/d87fae37-afd3-4d74-a643-d5466f6859b0" />
-
-
