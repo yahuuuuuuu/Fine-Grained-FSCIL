@@ -27,3 +27,18 @@ CIFAR100
 ```
 $python train.py -project lgf -dataset cifar100 -alpha 0.4 -beta 0.4 -base_mode 'ft_cos' -new_mode 'avg_cos' -lr_base 0.1 -lr_new 0.001 -decay 0.0005 -epochs_base 120 -schedule Cosine -gpu 0 -temperature 16 -moco_dim 32 -mlp -moco_t 0.07 -size_crops 32 18 -min_scale_crops 0.9 0.2 -max_scale_crops 1.0 0.7 -num_crops 2 0 -constrained_cropping
 ```
+
+
+Our paper has been accepted by International Journal of Multimedia Information Retrieval
+```
+@article{yin2026optimising,
+  title={Optimising few-shot class-incremental learning for fine-grained visual recognition},
+  author={Yin, Yimin and Liu, Haoling and Xu, Sihang and Zhang, Renye and Zhang, Jinghua},
+  journal={International Journal of Multimedia Information Retrieval},
+  volume={15},
+  number={2},
+  pages={18},
+  year={2026},
+  publisher={Springer}
+}
+```
